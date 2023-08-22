@@ -1,7 +1,7 @@
 pipeline {
         agent any
         tools {
-                mvn 'Maven3.9.4'
+                maven 'Maven3.9.4'
         }
         stages {
                 stage('build') {
@@ -20,6 +20,5 @@ pipeline {
                                 archiveArtifacts(artifacts: '**/target/*.war', firgerprint: true)
                         }
                 }
-
         }
 }
