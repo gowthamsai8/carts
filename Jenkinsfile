@@ -1,14 +1,14 @@
 pipeline {
-	agent any
-	tool {
-		mvn 'Maven3.9.4'
-	}
-	stages {
-		stage('build') {
-			steps {
-				sh 'mvn compile'
-			}
-		}
+        agent any
+        tools {
+                maven 'Maven3.9.4'
+        }
+        stages {
+                stage('build') {
+                        steps {
+                                sh 'mvn compile'
+                        }
+                }
                 stage('test') {
                         steps {
                                 sh 'mvn test'
@@ -17,9 +17,8 @@ pipeline {
                 stage('package') {
                         steps {
                                 sh 'mvn package -DskipTests'
-				archiveArtifacts(artifacts: '**/target/*.war', firgerprint: true)
+                                archiveArtifacts(artifacts: '**/target/*.war', firgerprint: true)
                         }
                 }
-
-	}
+        }
 }
