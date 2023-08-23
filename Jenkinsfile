@@ -2,12 +2,11 @@ pipeline {
         agent any
         tools {
                 maven 'Maven 3.9.4'
-                java 'JDK 20.0.2'
         }
         stages {
                 stage('build') {
                         steps {
-                                sh 'mvn compile'
+                                sh 'mvn clean compile'
                         }
                 }
                 stage('test') {
