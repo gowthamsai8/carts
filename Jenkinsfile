@@ -1,5 +1,9 @@
 pipeline {
-        agent any
+        agent {
+                docker {
+                        image 'maven:3-eclipse-temurin-11'
+                }
+        }
         tools {
                 maven 'Maven 3.9.4'
 		jdk 'JDK 20.0.2'
