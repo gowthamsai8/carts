@@ -6,7 +6,6 @@ pipeline {
         }
         tools {
                 maven 'Maven 3.9.4'
-		jdk 'JDK 20.0.2'
         }
         stages {
                 stage('build') {
