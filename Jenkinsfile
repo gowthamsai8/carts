@@ -1,7 +1,7 @@
 pipeline {
         agent {
                 docker {
-                        image 'gowthams96/carts-maven:latest'
+                        image 'schoolofdevops/carts-maven:3.9'
                 }
         }
         tools {
