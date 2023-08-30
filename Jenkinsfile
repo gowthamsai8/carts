@@ -1,7 +1,7 @@
 pipeline {
         agent {
                 docker {
-                        image 'maven:3-eclipse-temurin-11'
+                        image 'gowthams96/carts-maven:latest'
                 }
         }
         tools {
